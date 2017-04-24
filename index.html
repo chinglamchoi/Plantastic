@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- INCLUDES JQUERY LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- Start of first page -->
+    <div data-role="page" id="MainActivity">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a class="active" href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+               
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 id="p2">Food Collector</h2></strong>
+            <a href="#LearnMore" data-transition="flip">
+                <img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fcswd.net%2Fwp-content%2Fuploads%2F2010%2F11%2Ffood-scraps-jpg.jpg&f=1" class="front-pic">
+            </a>
+            <h3 align="center" id="w">
+                <bold>Welcome!</bold>
+            </h3>
+            <p><a href="#Main2Activity" data-role="button" data-transition="flip" class="button1">Find Collection Points</a></p>
+            <p><a href="#Main3Activity" data-role="button" data-transition="flip" class="button1">Submit a Collection Point</a></p>
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <div>
+                <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+                <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+                <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+                <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+                <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                    <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                    <br/>
+                    <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                    <button id="subscribe" type="submit">Subscribe</button>
+                </form>
+                <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--  start of contact page  -->
+    <div data-role="page" id="contact">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 id="p2" align="center">Food Collector</h2></strong>
+            <!--<h3>
+                <bold>Contact Us</bold>
+            </h3>-->
+            <form id="form" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <h3>Contact Form</h3>
+                <hr/><br/>
+                <label>Name: <span>*</span></label>
+                <br/>
+                <input id="name" name="name" placeholder="Your Name" type="text" required/><br/>
+                <br/>
+                <label>Company/ Organistaion:</label>
+                <br/>
+                <input id="company" type="text" placeholder="Your company/ organisation (if applicable)" name="Company/Organisation" />
+                <br/>
+                <label>Email: <span>*</span></label>
+                <br/>
+                <input id="email" name="email" placeholder=" Your Email" type="email" required/><br/>
+                <br/>
+                <label>Message:<span>*</span></label>
+                <br/>
+                <textarea id="message" name="message" placeholder="Message......." required></textarea><br/>
+                <br/>
+                <button type="submit" class="subscribe2">Submit</button>
+                <br/>
+            </form>
+
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+    <!--  start of about page  -->
+    <div data-role="page" id="about">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 id="p2" align="center">-Our Mission-</h2></strong>`
+            <hr/>
+            <h3>
+                <bold>About Us</bold>
+            </h3>
+            <ul>
+                <li></li>
+            </ul>
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+    <!--  start of TOS page  -->
+    <div data-role="page" id="TOS">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 id="p2" align="center">Food Collector</h2></strong>
+            <hr/>
+            <h3>
+                <bold>Terms of Use</bold>
+            </h3>
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--  start of PP page  -->
+    <div data-role="page" id="PP">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 id="p2" align="center">Food Collector</h2></strong>
+            <hr/>
+            <h3>
+                <bold>Privacy Policy</bold>
+            </h3>
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+
+
+    <!--  start of info page  -->
+    <div data-role="page" id="info">
+
+        <!--  header -->
+        <div data-role="header">
+            <div class="icon-bar">
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a class="active" href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2 align="center" id="p2">Food Collector</h2></strong>
+            <h3 align="center">
+                <bold>FAQ</bold>
+            </h3>
+            <hr/>
+            <p align="left"><strong>What is the list of all collection points in Hong Kong?</strong></p>
+            <ul>
+                <li align="left">The list of all collection points in indexed in the Search page. You can access it by clicking the "search" icon.</li>
+            </ul>
+            <br/>
+            <p align="left"> <strong>What kind of food can I submit to the food collection points? </strong></p>
+            <ul>
+                <li></li>
+            </ul>
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Start of second page    -->
+    <div data-role="page" id="Main2Activity">
+
+        <div data-role="header">
+
+            <div class="icon-bar">
+
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a class="active" href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p align="center">
+                <h2>What kind of food would like to submit?</h2>
+            </p>
+
+            <h5><a href="#Leftovers" data-role="button" data-transition="flip" class="button1">Leftovers (inedible)</a></h5>
+            <h5><a href="#Groceries" data-role="button" data-transition="flip" class="button1">Fresh Groceries (perishable)</a></h5>
+            <h5><a href="#Snacks" data-role="button" data-transition="flip" class="button1">Packaged Snacks (unexpired)</a></h5>
+
+
+
+        </div>
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+
+    <!-- Start of LearnMore page -->
+    <div data-role="page" id="LearnMore">
+
+        <!--  header -->
+        <div data-role="header">
+
+            <div class="icon-bar">
+
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <div role="main" class="ui-content">
+            <h1> Food Waste Facts</h1>
+            <p id="paragraph1">
+                <span style="font-size: 24px;">
+              <span style="color: #57BC90;"> Educate</span>
+                </span>
+                yourself and share these facts with your friends & family. </p>
+            <ul>
+                <li>
+                    <strong style="color: #57BC90;">3,337 </strong> tons of food waste are disposed of in landfills each day in Hong Kong. This is equivalent to the weight of <strong style="color: #57BC90;"> 7.3</strong> fully-loaded Boeing 747s.
+                </li>
+                <br/>
+                <li>
+                    Roughly <strong style="color: #57BC90;">1/3 </strong> of the food produced in the world for human consumption every year — approximately 1.3 billion tonnes — gets lost or wasted.
+                </li>
+            </ul>
+
+        </div>
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+        <!-- /Main -->
+
+
+    </div>
+
+
+
+
+
+    <!-- Start of Leftovers page -->
+    <div data-role="page" id="Leftovers">
+
+        <!--  header -->
+        <div data-role="header">
+
+            <div class="icon-bar">
+
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2>Leftovers: Food Collection Points</h2></strong>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1TBMQqXJKrRoSIFT5mZiKwSPxIQo" width="540" height="480"></iframe>
+
+        </div>
+        <!-- /Main -->
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+            <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe</button>
+            </form>
+            <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+        </div>
+    </div>
+
+
+
+    <!-- Start of Fresh Groceries (perishable) page -->
+    <div data-role="page" id="Groceries">
+
+        <!--  header -->
+        <div data-role="header">
+
+            <div class="icon-bar">
+
+                <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                <a href="#info"><i class="fa fa-question-circle"></i></a>
+                
+                <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+            </div>
+        </div>
+        <!-- /header -->
+
+        <!-- Main -->
+        <div role="main" class="ui-content" align="center">
+            <strong><h2>Fresh Groceries: Food Collection Points</h2></strong>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1TBMQqXJKrRoSIFT5mZiKwSPxIQo" width="540" height="480"></iframe>
+      </div>
+            <!-- /Main -->
+
+            <div data-role="footer">
+                <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+                <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+                <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+                <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+                <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                    <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                    <br/>
+                    <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                    <button id="subscribe" type="submit">Subscribe</button>
+                </form>
+                <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+            </div>
+        </div>
+
+
+
+
+        <!-- Start of Packaged Snacks (unexpired) page -->
+        <div data-role="page" id="Snacks">
+
+            <!--  header -->
+            <div data-role="header">
+
+                <div class="icon-bar">
+
+                    <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                    <a href="#info"><i class="fa fa-question-circle"></i></a>
+                    
+                    <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                    <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+                </div>
+            </div>
+            <!-- /header -->
+
+            <!-- Main -->
+            <div role="main" class="ui-content" align="center">
+                <strong><h2>Packaged Snacks: Food Collection Points</h2></strong>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1TBMQqXJKrRoSIFT5mZiKwSPxIQo" width="540" height="480" id="mappp"></iframe>
+            </div>
+            <!-- /Main -->
+
+            <div data-role="footer">
+                <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+                <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+                <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+                <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+                <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                    <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                    <br/>
+                    <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                    <button id="subscribe" type="submit">Subscribe</button>
+                </form>
+                <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Start of third page    -->
+        <div data-role="page" id="Main3Activity">
+
+            <div data-role="header">
+
+                <div class="icon-bar">
+
+                    <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                    <a href="#info"><i class="fa fa-question-circle"></i></a>
+                    
+                    <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                    <a href="#globe"><i class="fa fa-location-arrow"></i></a>
+                </div>
+            </div>
+
+            <div role="main" class="ui-content">
+                <div id="mainform">
+                    <h2 class="green">Please fill in the following form to submit a Food Collection Point!</h2>
+                    <!-- Required div starts here -->
+                    <form id="form" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                        <h3>Contact Form</h3>
+                        <hr/><br/>
+                        <label>Name: <span>*</span></label>
+                        <br/>
+                        <input id="name" name="name" placeholder="Your Name" type="text" required/><br/>
+                        <br/>
+                        <label>Email: <span>*</span></label>
+                        <br/>
+                        <input id="email" name="email" placeholder=" Your Email" type="email" required/><br/>
+                        <label>Company/ Organistaion:</label>
+                        <br/>
+                        <input id="company" type="text" placeholder="Your company/ organisation (if applicable)" name="Company/Organisation" />
+
+                        <br/>
+                        <label>Name of Food Collection Point: <span>*</span></label>
+                        <br/>
+                        <input id="SiteName" name="SiteName" type="text" placeholder="Name of Food Collection Point" required/><br/>
+                        <br/>
+                        <label>Address: <span>*</span></label>
+                        <br/>
+                        <input id="address" name="address" type="text" placeholder="Full address of Food Collection Point" required/><br/>
+                        <label>Collection Site Webpage:</label>
+                        <br/>
+                        <input id="url" name="url" type="url" placeholder="Webpage address of Collection Point" /> <br/>
+                        <label>Message:</label>
+                        <br/>
+                        <textarea id="message" name="message" placeholder="Message......."></textarea><br/>
+                        <br/>
+                        <button type="submit" class="subscribe2">Submit</button>
+                        <br/>
+                    </form>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div data-role="footer">
+                <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Use</a>
+                <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+                <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+                <a href="#about" data-role="button" data-transition="flip" class="button2">About Us</a>
+                <form class="form2" action="https://formspree.io/ccl5a09@gmail.com" method="POST">
+                    <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                    <br/>
+                    <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                    <button id="subscribe" type="submit">Subscribe</button>
+                </form>
+                <p id="c"> © 2017 Food Collector. All rights reserved. </p>
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+
+        <!--  Collection points near me (globe icon)  -->
+        <div data-role="page" id="globe">
+
+            <div data-role="header">
+                <div class="icon-bar">
+                    <a href="#MainActivity"><i class="fa fa-home"></i></a>
+                    <a href="#info"><i class="fa fa-question-circle"></i></a>
+                   
+                    <a href="#Main2Activity"><i class="fa fa-recycle"></i></a>
+                    <a class="active" href="#globe"><i class="fa fa-location-arrow"></i></a>
+                </div>
+            </div>
+            <div role="main" class="ui-content">
+                <h2 id="p2">Food Collection Points Near Me</h2>
+                <hr/>
+                <br/>
+                <div id="mapContainer" style="">
+                    <div id="map" style="width: 500px; height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /page -->
+    </div>
+    <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: -34.397,
+                    lng: 150.644
+                },
+                zoom: 15
+            });
+            infoWindow = new google.maps.InfoWindow;
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+      
+     
+        var locations = [
+          ['Stadtbibliothek Zanklhof', 47.06976, 15.43154, 1],
+          ['Stadtbibliothek dieMediathek', 47.06975, 15.43116, 2],
+          ['Stadtbibliothek Gösting', 47.09399, 15.40548, 3],
+          ['Stadtbibliothek Graz West', 47.06993, 15.40727, 4],
+          ['Stadtbibliothek Graz Ost', 47.06934, 15.45888, 5],
+          ['Stadtbibliothek Graz Süd', 47.04572, 15.43234, 6],
+          ['Stadtbibliothek Graz Nord', 47.08350, 15.43212, 7],
+          ['Stadtbibliothek Andritz', 47.10280, 15.42137, 8]
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: new google.maps.LatLng(47.071876, 15.441456),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
+        
+      
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXLeQ5Ia0Dan3tatTDjcPRkTcUtcpu_9w&callback=initMap"></script>
+</body>
+
+</html>

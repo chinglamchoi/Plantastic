@@ -1,0 +1,156 @@
+.ui-content {
+    /*font-family: Algerian;*/
+    background-color: #FFF !important;
+    font-family: 'Quicksand', sans-serif, cursive !important;
+}
+
+.front-pic {
+    width: 50%;
+}
+
+#back2 {
+    margin: 2em auto;
+    display: block;
+    border: 6px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    padding: 0.5em 2em;
+    /*background-repeat: no-repeat;
+  background-size: 100%;*/
+    background-clip: padding-box;
+    position: relative;
+    color: black;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.button1 {
+    margin: 2em auto !important;
+    display: block !important;
+    border: 6px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 50px !important;
+    padding: 0.5em 2em !important;
+    border-color: #57BC90 !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-clip: padding-box !important;
+    position: relative !important;
+    background-color: #57BC90 !important;
+    color: white!important;
+    font-family: 'Quicksand', sans-serif !important;
+  height: 35px !important;
+  text-align: center !important;
+  font-size: 22px !important;
+}
+
+#w{
+  font-size: 25px !important;
+}
+
+#p2 {
+    color: #57BC90 !important;
+  font-size: 35px !important;
+}
+
+.icon-bar {
+    width: 100%;
+    /* Full-width */
+    background-color: #555;
+    /* Dark-grey background */
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    /* Float links side by side */
+    text-align: center !important;
+    /* Center-align text */
+    width: 25%;
+    /* Equal width (5 icons with 20% width each = 100%)
+    padding: 12px 0; /* Some top and bottom padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: #FFF !important;
+    /* White text color */
+    font-size: 45px;
+    /* Increased font size */
+  height: 60px !important;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+    /* Add a hover color */
+}
+
+.active {
+    background-color: #57BC90;
+    /* Add an active/current color */
+}
+
+.green {
+    color: #57BC90 !important;
+}
+
+.button2 {
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    position: relative !important;
+    background-color: #FFF !important;
+    color: black!important;
+    font-family: 'Quicksand', sans-serif !important;
+    height: 20px;
+  font-size: 15px !important;
+}
+
+.newsletter {
+    height: 50px;
+    width: 50px;
+}
+
+
+/*#form2.ui-input-text{
+  height: 500px;
+  width: 50%;
+}*/
+
+#subscribe {
+    margin: 2em auto !important;
+    display: block !important;
+    border: 6px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 50px !important;
+    padding: 0.5em 2em !important;
+    border-color: #57BC90 !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-clip: padding-box !important;
+    position: relative !important;
+    background-color: #57BC90 !important;
+    color: white!important;
+    font-family: 'Quicksand', sans-serif !important;
+    height: 50px !important;
+    font-size: 17px !important;
+  text-align: center !important;
+}
+
+.subscribe2{
+  margin: 2em auto !important;
+    display: block !important;
+    border: 6px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 50px !important;
+    padding: 0.5em 2em !important;
+    border-color: #57BC90 !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-clip: padding-box !important;
+    position: relative !important;
+    background-color: #57BC90 !important;
+    color: white!important;
+    font-family: 'Quicksand', sans-serif !important;
+    height: 50px !important;
+    font-size: 17px !important;
+  text-align: center !important;
+}
+
+#c {
+  font-size: 15px !important;
+  color: #666666 !important;
+}
