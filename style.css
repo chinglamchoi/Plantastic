@@ -42,6 +42,26 @@
   font-size: 22px !important;
 }
 
+
+.button3 {
+    margin: 2em auto !important;
+    display: block !important;
+    border: 6px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 50px !important;
+    padding: 0.5em 2em !important;
+    border-color: #57BC90 !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    background-clip: padding-box !important;
+    position: relative !important;
+    background-color: #57BC90 !important;
+    color: white!important;
+    font-family: 'Quicksand', sans-serif !important;
+  height: 25px !important;
+  text-align: center !important;
+  font-size: 20px !important;
+}
+
 #w{
   font-size: 25px !important;
 }
