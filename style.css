@@ -22,6 +22,11 @@
     font-family: 'Quicksand', sans-serif !important;
 }
 
+.img127 {
+    max-width: 50% !important;
+    max-heihgt: 50% !important;
+}
+
 .button1 {
     margin: 2em auto !important;
     display: block !important;
