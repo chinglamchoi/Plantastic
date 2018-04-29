@@ -14,6 +14,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <script>
+//the following function computes the optimal route to travel through all selected destinations
+
         var table = [[0, 137, 58, 60, 40, 35, 35, 89, 49, 30, 40, 30, 26, 35, 55, 53, 69, 55],
          [137, 0, 80, 150, 168, 140, 102, 65, 100, 119, 139, 110, 123, 117, 100, 135, 105, 110],
          [58, 80, 0, 75, 90, 60, 23, 60, 55, 55, 70, 40, 57, 47, 50, 77, 65, 60],
@@ -32,146 +34,49 @@
          [53, 135, 77, 109, 55, 85, 57, 89, 49, 30, 15, 37, 30, 30, 37, 0, 38, 27],
          [69, 105, 65, 120, 85, 100, 58, 102, 62, 43, 45, 40, 45, 37, 18, 38, 0, 18],
          [55, 110, 60, 104, 70, 85, 45, 84, 44, 25, 30, 25, 29, 21, 11, 27, 18, 0]];
-        var foo = [];
-        var bar = [];
+        var listofdestinations = [];
+        var mintraveltime = [];
         var route = [];
 
         function permutee(a, l, r) {
           if (l === r){
-            var nooo = a;
-            var summ = table[0][Number(nooo[0])-1];
-            var i;
-            for (i = 0; i < nooo.length; i++) {
+            var summ = table[0][Number(a[0])-1];
+            let i;
+            for (i = 0; i < a.length; i++) {
               try {
-                summ = summ + table[Number(nooo[i])-1][Number(nooo[i+1])-1];
+                summ = summ + table[Number(a[i])-1][Number(a[(i+1)%a.length])-1];
               }
               catch(err) {
                  { break; }
               }
             }
-            summ = summ + table[Number(nooo[nooo.length-1])-1][0];
-            if (bar.length === 0) {
-              bar.push(summ);
-              route.push(nooo.join(""));
+            summ = summ + table[Number(a[a.length-1])-1][0];
+            if (mintraveltime.length === 0) {
+              mintraveltime.push(summ);
+              route.push(a.join(""));
             } else {
-              if (summ < Math.min.apply(Math, bar)) {
-                bar[0] = summ;
-                route[0] = nooo.join("");
+              if (summ < Math.min.apply(Math, mintraveltime)) {
+                mintraveltime[0] = summ;
+                route[0] = a.join("");
               }
             }
           } else {
-            var j;
+            let j;
             for (j = 1; j < r + 1; j ++) {
-              var temp = a[l];
+              let temp = a[l];
               a[l] = a[j];
               a[j] = temp;
               permutee(a, l+1, r);
-              var temp2 = a[l];
+              let temp2 = a[l];
               a[l] = a[j];
-              a[j] = temp;
+              a[j] = temp2;
             }
           }
+          document.getElementById("testing").innerHTML = route.join("");
         }
-
-        function myFunction2() {
-            if (document.getElementById("2").checked == True) {
-                foo.push("2");
-            }
-        }
-
-        function myFunction3() {
-            if (document.getElementById("3").checked == True) {
-                foo.push("3");
-            }
-        }
-
-        function myFunction4() {
-            if (document.getElementById("4").checked == True) {
-                foo.push("4");
-            }
-        }
-
-        function myFunction5() {
-            if (document.getElementById("5").checked == True) {
-                foo.push("5");
-            }
-        }
-
-        function myFunction6() {
-            if (document.getElementById("6").checked == True) {
-                foo.push("6");
-            }
-        }
-
-        function myFunction7() {
-            if (document.getElementById("7").checked == True) {
-                foo.push("7");
-            }
-        }
-
-        function myFunction8() {
-            if (document.getElementById("8").checked == True) {
-                foo.push("8");
-            }
-        }
-
-        function myFunction9() {
-            if (document.getElementById("9").checked == True) {
-                foo.push("9");
-            }
-        }
-
-        function myFunction10() {
-            if (document.getElementById("10").checked == True) {
-                foo.push("10");
-            }
-        }
-
-        function myFunction11() {
-            if (document.getElementById("11").checked == True) {
-                foo.push("11");
-            }
-        }
-
-        function myFunction12() {
-            if (document.getElementById("12").checked == True) {
-                foo.push("12");
-            }
-        }
-
-        function myFunction13() {
-            if (document.getElementById("13").checked == True) {
-                foo.push("13");
-            }
-        }
-
-        function myFunction14() {
-            if (document.getElementById("14").checked == True) {
-                foo.push("14");
-            }
-        }
-
-        function myFunction15() {
-            if (document.getElementById("15").checked == True) {
-                foo.push("15");
-            }
-        }
-
-        function myFunction16() {
-            if (document.getElementById("16").checked == True) {
-                foo.push("16");
-            }
-        }
-
-        function myFunction17() {
-            if (document.getElementById("17").checked == True) {
-                foo.push("17");
-            }
-        }
-
-        function myFunction18() {
-            if (document.getElementById("18").checked == True) {
-                foo.push("18");
+function myFunction(index) {
+            if (document.getElementById(index).checked) {
+                listofdestinations = listofdestinations.concat(index);
             }
         }
 
@@ -224,7 +129,7 @@
 <body>
     <div data-role="page" id="Home">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a class="active" href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -263,7 +168,7 @@
 
    <div data-role="page" id="plan">
         <div data-role="header">
-                <div class="icon-bar">
+                <div class="icon-mintraveltime">
                     <a href="#Home"><i class="fa fa-home"></i></a>
                     <a href="#info"><i class="fa fa-question-circle"></i></a>
                     <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -275,92 +180,91 @@
                 <h2 align="center">Which POIs do you want to visit?</h2>    
                 <br>
                 <img src="https://i.imgur.com/MDTRc0H.jpg" title="Disneyland 迪士尼樂園" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="2" onclick="myFunction2()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="2" onclick="myFunction('2')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/BEyUbKe.jpg0" title="Tsing Ma Bridge 青馬大橋" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="3" onclick="myFunction3()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="3" onclick="myFunction('3')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/R68sMh1.jpg" title="Lai Chi Wo 荔枝窩" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="4" onclick="myFunction4()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="4" onclick="myFunction('4')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/JC8igA2.jpg" title="Clear Water Bay Country Park 清水灣郊野公園" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="5" onclick="myFunction5()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="5" onclick="myFunction('5')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/16xc7Wi.jpg" title="Man Ho Temple 文武廟" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="6" onclick="myFunction6()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="6" onclick="myFunction('6')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/gwAZF23.jpg" title="Noah's Ark 挪亞方舟" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="7" onclick="myFunction7()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="7" onclick="myFunction('7')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/LQtlCS2.jpg" title="Lung Kwu Tan 龍鼓灘" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="8" onclick="myFunction8()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="8" onclick="myFunction('8')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/VsRw4BD.jpg" title="Lau Fau Shan 流浮山" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="9" onclick="myFunction9()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="9" onclick="myFunction('9')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/gzrBfjl.jpg" title="The Kowloon Walled City Park 九龍寨城公園" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="10" onclick="myFunction10()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="10" onclick="myFunction('10')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/0uLizDA.jpg" title="The Wilson Trail Stage 3 衛奕信徑第三段" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="11" onclick="myFunction11()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="11" onclick="myFunction('11')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/YZD3tXh.jpg" title="Tin Hau Temple 天后廟" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="12" onclick="myFunction12()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="12" onclick="myFunction('12')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/tbF4T3V.jpg" title="Wong Tai Sin Temple 黃大仙祠" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="13" onclick="myFunction13()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="13" onclick="myFunction('13')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>                   
                 <img src="https://i.imgur.com/sT11AWU.jpg" title="Kowloon Park 九龍公園" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="14" onclick="myFunction14()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="14" onclick="myFunction('14')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/FXQaXB8.jpg" title="City Hall 香港大會堂" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="15" onclick="myFunction15()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="15" onclick="myFunction('15')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/RcOfh8t.jpg" title="Noonday Gun 午炮" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="16" onclick="myFunction16()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="16" onclick="myFunction('16')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/6yRqJlU.jpg" title="Ocean Park 海洋公園" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="17" onclick="myFunction17()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="17" onclick="myFunction('17')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
                 <br>
                 <img src="https://i.imgur.com/6RmpOYp.jpg" title="Lovers' Rock 姻緣石" style="max-width:30%;max-height:30%;"/>
-                <input type="checkbox" id="18" onclick="myFunction18()" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
+                <input type="checkbox" id="18" onclick="myFunction('18')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
-                <br>
-                <br>
-                <p><a href="#Main3Activity" data-role="button" data-transition="flip" class="button1" onclick="permutee(foo, 0, foo.length-1)" id="ohho">Submit</a></p>
+                <p><a href="#Main3Activity" data-role="button" data-transition="flip" class="button1" onclick="permutee(listofdestinations, 0, listofdestinations.length-1)" id="ohho">Submit</a></p>
+                <p id = "testing"> This text should change to the value of route</p>
                 <style>
                 #ohho {
                     max-width: 20% !important;
@@ -388,7 +292,7 @@
 
     <div data-role="page" id="contact">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -439,7 +343,7 @@
 
     <div data-role="page" id="credits">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -471,22 +375,22 @@
             </label>
             <ul>
                 <li>
-                    <a href="http://www.fao.org/save-food/resources/keyfindings/en/">
+                    <a href="http://www.fao.org/save-listofdestinationsd/resources/keyfindings/en/">
                         Fao.org
                     </a> 
                 </li>
                 <li>
-                    <a href="https://foodtank.com/news/2015/06/world-environment-day-10-facts-about-food-waste-from-bcfn/">
-                        FoodTank.com
+                    <a href="https://listofdestinationsdtank.com/news/2015/06/world-environment-day-10-facts-about-listofdestinationsd-waste-from-bcfn/">
+                        listofdestinationsdTank.com
                     </a>
                 </li>
                 <li>
-                    <a href="http://feedbackglobal.org/food-waste-scandal/">
+                    <a href="http://feedbackglobal.org/listofdestinationsd-waste-scandal/">
                         FeedBackGlobal.org
                     </a>
                 </li>
                 <li>
-                    <a href="http://www.theworldcounts.com/stories/Food-Waste-Facts">
+                    <a href="http://www.theworldcounts.com/stories/listofdestinationsd-Waste-Facts">
                         TheWorldCounts.com
                     </a>
                 </li>
@@ -512,7 +416,7 @@
 
     <div data-role="page" id="about">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -526,10 +430,10 @@
             <br/>
             <label align="center"> -What I hope to achieve-</label>
             <ul>
-              <li align="left">Promote and incorporate donating foods in everyday life. </li>
-              <li align="left">Redistribute food to the needy, solving the poverty-induced World Hunger problems. </li>
-              <li align="left">Repurpose leftover foods to produce fertilisers and animal feed, providing an alternative to sending foods to landfills, thus reducing environmental harms caused by food wastage (Discarded food).</li>
-              <li align="left">Eradicate the Food Wastage issue. </li>
+              <li align="left">Promote and incorporate donating listofdestinationsds in everyday life. </li>
+              <li align="left">Redistribute listofdestinationsd to the needy, solving the poverty-induced World Hunger problems. </li>
+              <li align="left">Repurpose leftover listofdestinationsds to produce fertilisers and animal feed, providing an alternative to sending listofdestinationsds to landfills, thus reducing environmental harms caused by listofdestinationsd wastage (Discarded listofdestinationsd).</li>
+              <li align="left">Eradicate the listofdestinationsd Wastage issue. </li>
               <li align="left">Inspire everyone to actively solve everyday problems through programming. </li>
             </ul>
         </div>
@@ -553,7 +457,7 @@
     
     <div data-role="page" id="TOS">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -737,7 +641,7 @@
 
     <div data-role="page" id="PP">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -865,7 +769,7 @@
 
     <div data-role="page" id="faq">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -919,7 +823,7 @@
 
     <div data-role="page" id="info">
         <div data-role="header">
-            <div class="icon-bar">
+            <div class="icon-mintraveltime">
                 <a href="#Home"><i class="fa fa-home"></i></a>
                 <a class="active" href="#info"><i class="fa fa-question-circle"></i></a>
                 <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -979,7 +883,7 @@
     <div align="center">
     <img src="http://www.peninsula.com/en/~/media/Images/The-Peninsula-Hotels/pencities/hong-kong/13%20Jan%202018%20Wk3/Large%20HONG%20KONG%20Hong%20Kongs%20Best%20Golf%20Courses%2001.ashx?mw=1196" class = "img127"/>
     </div>
-    <p>Inaugurated in 1979, the Clear Water Bay Country Park in Southeast New Territories is famed for its green hills and clear waters, along with its peculiar rock structures. For instance, Tai Leng Tung surrounds the cape of east Clear Water Bay, allowing tourists to contemplate the entire island. Striding up along Lung Ha Wan, one can observe weathered rocks on elevated grounds, and Igneous rocks at lower altitudes, bearing witness to its grandeur. Subsequently, there are many challenging trails for eager hikers. Moreover, Clear Water Bay is home to a wide array of botanical and avian species, such as the Ficus hispida, Liquidambar formosana Hance, Garcinia oblongifolia and black-eared kite.</p>
+    <p>Inaugurated in 1979, the Clear Water Bay Country Park in Southeast New Territories is famed for its green hills and clear waters, along with its peculiar rock structures. For instance, Tai Leng Tung surrounds the cape of east Clear Water Bay, allowing tourists to contemplate the entire island. Striding up along Lung Ha Wan, one can observe weathered rocks on elevated grounds, and Igneous rocks at lower altitudes, bearing witness to its grandeur. Subsequently, there are many challenging trails for eager hikers. Moreover, Clear Water Bay is home to a wide array of botanical and avian species, such as the Ficus hispida, Liquidammintraveltime formosana Hance, Garcinia oblongifolia and black-eared kite.</p>
     <br>
     <p>清水灣郊野公園（西貢）</p>
     <p>成立於1979年的清水灣郊野公園位於新界東南部，以青山綠水、奇石嶙峋見稱。例如，大嶺峒包圍清水灣東面海角，能俯瞰整個海岸。沿龍蝦灣小徑往上走，高處是因風化侵蝕而露出的岩石，低處則是山岳下的火成岩，氣勢磅礡。不僅如此，那裡還有很多郊遊徑供行山愛好者逐一挑戰。此外，當地的植物及鳥類品種繁多，如對葉榕、球楓、黃牙果、黑耳鳶（麻鷹)。
@@ -1015,7 +919,7 @@
     <div align="center">
     <img src="http://static.panoramio.com/photos/original/78528091.jpg" class = "img127"/>
     </div>
-    <p>Said to be the backyard of the New Territories, Lung Kwu Tan is the furthest point on Hong Kong’s western coastline. With a beach like a crescent moon, it is a great vantage point for the viewing of sunsets. The nearby Urmston Road is also a location where Chinese White Dolphins often appear, and is a must-go location for photographers. Additionally, many recreational facilities are available there, including barbeque sites, a mini race car site, and also wakeboards available for rental.</p>
+    <p>Said to be the backyard of the New Territories, Lung Kwu Tan is the furthest point on Hong Kong’s western coastline. With a beach like a crescent moon, it is a great vantage point for the viewing of sunsets. The nearby Urmston Road is also a location where Chinese White Dolphins often appear, and is a must-go location for photographers. Additionally, many recreational facilities are available there, including mintraveltimebeque sites, a mini race car site, and also wakeboards available for rental.</p>
     <br>
     <p>龍鼓灘（屯門）</p>
     <p>被譽為新界的後花園的龍鼓灘是香港西面海岸線最邊的地方。海灘猶如半月，是欣賞落霞的好地方。附近的龍鼓水道更是中華白海豚經常出沒的地方，是攝影發燒友的必去之地。此外，那裡娛樂設施完善，除了燒烤場、小型活動賽車場，遊客還可以到海上玩花式滑水，是週末的好去處。
@@ -1027,7 +931,7 @@
     <div align="center">
     <img src="http://3.bp.blogspot.com/-qqWPK6B15h4/U85hsMGk3pI/AAAAAAAAZQg/9PsgIxhqNxU/s1600/1.IMG_0001.JPG" class = "img127"/>
     </div>
-    <p>Lau Fau Shan is a popular site for tourists, famous for its fresh seafood and beautiful scenery. As its location is far from the city and close to the sea, one is able to enjoy an unobscured view of the sunset. While simultaneously appealing to photographers, Lau Fau Shan’s succulent seafood also attracts large numbers of tourists.</p>
+    <p>Lau Fau Shan is a popular site for tourists, famous for its fresh sealistofdestinationsd and beautiful scenery. As its location is far from the city and close to the sea, one is able to enjoy an unobscured view of the sunset. While simultaneously appealing to photographers, Lau Fau Shan’s succulent sealistofdestinationsd also attracts large numbers of tourists.</p>
     <br>
     <p>流浮山（元朗）</p>
     <p>流浮山以其出產的海鮮和觀賞夕陽晚景聞名。由於該處遠離市區，鄰近海邊，故能清晰觀賞日落，吸引眾多的攝影愛好者前往。與此同時，其美味新鮮的海鮮也吸引了眾多食客前往品嚐。</p>
@@ -1083,7 +987,7 @@
     <div align="center">
     <img src="http://www.ryoko-traveler.com/blog/wp-content/uploads/2016/06/Entrance-Kowloon-Park-Tim-Sha-Tsui-Hongkong-201602.jpg" class = "img127"/>
     </div>
-  <p>Kowloon Park was once an army fortress, the site of the Whitfield Barracks of the British army, but was handed over from the military in 1970 to be redeveloped and opened to the public. It now is one of the largest public parks in Hong Kong, and a common place of recreation for nearby residents. There was also a former battery in the northwestern part of the park. Gardens, museums, lakes, an aviary, sporting facilities, and also the Avenue of Stars are located in the park. The Hong Kong Heritage Discovery Centre and Health Education Exhibition and Resource Centre are also within the park’s premises. </p>
+  <p>Kowloon Park was once an army fortress, the site of the Whitfield mintraveltimeracks of the British army, but was handed over from the military in 1970 to be redeveloped and opened to the public. It now is one of the largest public parks in Hong Kong, and a common place of recreation for nearby residents. There was also a former battery in the northwestern part of the park. Gardens, museums, lakes, an aviary, sporting facilities, and also the Avenue of Stars are located in the park. The Hong Kong Heritage Discovery Centre and Health Education Exhibition and Resource Centre are also within the park’s premises. </p>
   <br>
     <p>九龍公園（尖沙咀）</p>
     <p>九龍公園前身為英國軍隊的軍事堡壘，於且1970重建並對外開放。如今，它是香港最大的公共公園之一，亦是附近居民的康樂場所。園內有花園、博物館、湖泊、鳥舍、體育設施、炮台，以及馳名遠方的星光大道。衛生教育展覽及資料中心也位於園內。</p>
@@ -1168,7 +1072,7 @@ for (i = 0; i < acc.length; i++) {
 
         <div data-role="page" id="Main3Activity">
             <div data-role="header">
-                <div class="icon-bar">
+                <div class="icon-mintraveltime">
                     <a href="#Home"><i class="fa fa-home"></i></a>
                     <a href="#info"><i class="fa fa-question-circle"></i></a>  
                     <a href="#Map"><i class="fa fa-location-arrow"></i></a>
@@ -1204,7 +1108,7 @@ for (i = 0; i < acc.length; i++) {
                         <button type="submit" class="subscribe2">Submit</button>
                         <br/>
                     </form>
-                    <p> This form is for Housing Estates, Hotels, NGOs, or other businesses that wish to partner with the Plantastic in Leftover Foods (post-consumer) donations. Please click on the Plantastic icon, or refer to the FAQ page for more details. Please also feel free to Contact Us, should you have any inquiries. </p>
+                    <p> This form is for Housing Estates, Hotels, NGOs, or other businesses that wish to partner with the Plantastic in Leftover listofdestinationsds (post-consumer) donations. Please click on the Plantastic icon, or refer to the FAQ page for more details. Please also feel free to Contact Us, should you have any inquiries. </p>
                 </div>
             </div>
             <div data-role="footer">
@@ -1227,7 +1131,7 @@ for (i = 0; i < acc.length; i++) {
 
         <div data-role="page" id="Map">
             <div data-role="header">
-                <div class="icon-bar">
+                <div class="icon-mintraveltime">
                     <a href="#Home"><i class="fa fa-home"></i></a>
                     <a href="#info"><i class="fa fa-question-circle"></i></a>
                     <a class="active" href="#Map"><i class="fa fa-location-arrow"></i></a>
