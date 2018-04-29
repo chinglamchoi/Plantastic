@@ -72,7 +72,7 @@
               a[j] = temp2;
             }
           }
-          window.alert("Your optimal route is " + route.join('>>'));
+          document.getElementById("testing").innerHTML = route.join(">>");
         }
 
 function myFunction(index) {
@@ -265,8 +265,8 @@ function myFunction(index) {
                 <br>
                 <br>
                 <p><a href="" data-role="button" data-transition="flip" class="button1" onclick="permutee(listofdestinations, 0, listofdestinations.length-1)" id="ohho">Submit</a></p>
-                <p id = "testing"> This text should change to the value of route</p>
-                <p><a href="" data-role="button" data-transition="flip" class="button1" onclick="window.location.reload(true)" id="ohho">Reload</a></p>
+                <h2><p id = "testing"></p></h2>
+                <p><a href="" data-role="button" data-transition="flip" class="button1" onclick="window.location.reload(true)" id="ohho">Plan Another Route</a></p>
                 <style>
                 #ohho {
                     max-width: 20% !important;
