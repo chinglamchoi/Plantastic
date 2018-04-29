@@ -63,6 +63,7 @@
           } else {
             let j;
             for (j = l; j < r + 1; j ++) {
+                if (i >= r + 1) { break; }
               let temp = a[l];
               a[l] = a[j];
               a[j] = temp;
@@ -72,10 +73,7 @@
               a[j] = temp2;
             }
           }
-          let er = route.join(">>");
-          let re = "Your optimal route is: ";
-          let c = re + er;
-          alert(c);
+          alert("Your optimal solution is: " + route.join(">>"));
         }
 
 function myFunction(index) {
