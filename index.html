@@ -144,7 +144,7 @@ function myFunction(index) {
                 <bold>Welcome!</bold>
             </h3>
             <p><a href="#plan" data-role="button" data-transition="flip" class="button1">Plan a Route</a></p>
-            <p><a href="#Main3Activity" data-role="button" data-transition="flip" class="button1">Become a Partner</a></p>
+            <p><a href="#info" data-role="button" data-transition="flip" class="button1">Learn About the POIs</a></p>
         </div>
         <div data-role="footer">
             <div>
@@ -263,8 +263,9 @@ function myFunction(index) {
                 <input type="checkbox" id="18" onclick="myFunction('18')" style="width:30px;height:30px;float:left;margin:0 auto;width:100%;"/>
                 <br>
                 <br>
-                <p><a href="#Main3Activity" data-role="button" data-transition="flip" class="button1" onclick="permutee(listofdestinations, 0, listofdestinations.length-1)" id="ohho">Submit</a></p>
+                <p><a href="#results" data-role="button" data-transition="flip" class="button1" onclick="permutee(listofdestinations, 0, listofdestinations.length-1)" id="ohho">Submit</a></p>
                 <p id = "testing"> This text should change to the value of route</p>
+                <p><a href="" data-role="button" data-transition="flip" class="button1" onclick="window.location.reload(true)" id="ohho">Reload</a></p>
                 <style>
                 #ohho {
                     max-width: 20% !important;
@@ -287,6 +288,46 @@ function myFunction(index) {
             <p id="c"> © 2018 Plantastic. All rights reserved. </p>
         </div>
     </div>
+
+
+
+
+
+       <div data-role="page" id="results">
+        <div data-role="header">
+                <div class="icon-bar">
+                    <a href="#Home"><i class="fa fa-home"></i></a>
+                    <a href="#info"><i class="fa fa-question-circle"></i></a>
+                    <a href="#Map"><i class="fa fa-location-arrow"></i></a>
+                </div>
+        </div>
+
+        <div role="main" class="ui-content" align = "center" style="overflow:hidden">
+                <br>
+                <h2 align="center">Here's the optimal route to travel through allselected POIs!</h2>    
+                <br>
+                <p id = "testing"> This text should change to the value of route</p>
+                <p><a href="#plan" data-role="button" data-transition="flip" class="button1" onclick="window.location.reload(true)" id="ohho">Plan Another Route</a></p>
+                <p id = "testing"> This text should change to the value of route</p>
+        </div>
+
+        <div data-role="footer">
+            <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Service</a>
+            <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
+            <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
+            <a href="#faq" data-role="button" data-transition="flip" class="button2">FAQ</a>
+            <a href="#credits" data-role="button" data-transition="flip" class="button2">Credits</a>
+            <form class="form2" action="https://formspree.io/2018plantastic2018@gmail.com" method="POST">
+                <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
+                <br/>
+                <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
+                <button id="subscribe" type="submit">Subscribe to Newsletter </button>
+            </form>
+            <p id="c"> © 2018 Plantastic. All rights reserved. </p>
+        </div>
+    </div>
+
+
 
 
 
@@ -835,7 +876,7 @@ function myFunction(index) {
 <button class="accordion">POI 1 - HSMC Hall</button>
 <div class="panel">
     <div align="center">
-    <img src="http://www.hsmc.edu.hk/wp-content/uploads/2018/04/S-H-Ho-Academic-Building-Block-A.jpg" class = "img127"/>
+    <img src="http://www.hsmc.edu.hk/wp-content/uploads/2017/04/S-H-Ho-Academic-Building-Block-A.jpg" class = "img127"/>
     </div>
     <p>Hang Seng Management College is a university-level institution in Hong Kong that offers undergraduate programs and postgraduate degree programmes. Originally the Hang Seng School of Commerce, the institution reformed into the current HSMC in 2010, and is now applying to become a private university in Hong Kong. The HSMC Residential Colleges, constructed in 2015, are part of the HSMC campus and are about 5 minutes away from the main campus. The residential college system of HSMC aims for students to develop self-improvement thinking, inter-personal relationships and also self-discipline.</p>
     <br>
@@ -1069,63 +1110,6 @@ for (i = 0; i < acc.length; i++) {
         </div>
     </div>
 
-
-        <div data-role="page" id="Main3Activity">
-            <div data-role="header">
-                <div class="icon-bar">
-                    <a href="#Home"><i class="fa fa-home"></i></a>
-                    <a href="#info"><i class="fa fa-question-circle"></i></a>  
-                    <a href="#Map"><i class="fa fa-location-arrow"></i></a>
-                </div>
-            </div>
-            <div role="main" class="ui-content">
-                <div id="mainform">
-                    <h2 class="green">Please fill in the following form to apply to become a partner of Plantastic!</h2>
-                    <form id="form" action="https://formspree.io/2018plantastic2018@gmail.com" method="POST">
-                        <h3>Contact Form</h3>
-                        <hr/><br/>
-                        <label>Name: <span>*</span></label>
-                        <br/>
-                        <input id="name" name="name" placeholder="Your Name" type="text" required/><br/>
-                        <br/>
-                        <label>Email: <span>*</span></label>
-                        <br/>
-                        <input id="email" name="email" placeholder=" Your Email" type="email" required/><br/>
-                        <label>Company/ Organisation: <span>*</span></label>
-                        <br/>
-                        <input id="company" type="text" placeholder="Your company/ organisation" name="Company/Organisation" required/>
-                        <br/>
-                        <label>Address: <span>*</span></label>
-                        <br/>
-                        <input id="address" name="address" type="text" placeholder="Full address of Company/Organisation" required/><br/>
-                        <label>Company/organisation Webpage:</label>
-                        <br/>
-                        <input id="url" name="url" type="url" placeholder="Webpage address of Company/Organisation (if applicable)" /> <br/>
-                        <label>Message:<span>*</span></label>
-                        <br/>
-                        <textarea id="message" name="message" placeholder="Message......." required></textarea><br/>
-                        <br/>
-                        <button type="submit" class="subscribe2">Submit</button>
-                        <br/>
-                    </form>
-                    <p> This form is for Housing Estates, Hotels, NGOs, or other businesses that wish to partner with the Plantastic in Leftover listofdestinationsds (post-consumer) donations. Please click on the Plantastic icon, or refer to the FAQ page for more details. Please also feel free to Contact Us, should you have any inquiries. </p>
-                </div>
-            </div>
-            <div data-role="footer">
-                <a href="#TOS" data-role="button" data-transition="flip" class="button2">Terms of Service</a>
-                <a href="#PP" data-role="button" data-transition="flip" class="button2">Privacy Policy</a>
-                <a href="#contact" data-role="button" data-transition="flip" class="button2">Contact Us</a>
-                <a href="#faq" data-role="button" data-transition="flip" class="button2">FAQ</a>
-                <a href="#credits" data-role="button" data-transition="flip" class="button2">Credits</a>
-                <form class="form2" action="https://formspree.io/2018plantastic2018@gmail.com" method="POST">
-                    <input name="name2" class="newsletter" placeholder="Full Name" type="text" required/>
-                    <br/>
-                    <input name="name2" class="newsletter" placeholder="Email" type="email" required/>
-                    <button id="subscribe" type="submit">Subscribe to Newsletter</button>
-                </form>
-                <p id="c"> © 2018 Plantastic. All rights reserved. </p>
-            </div>
-        </div>
 
     
 
