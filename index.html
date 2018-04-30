@@ -63,7 +63,6 @@
           } else {
             let j;
             for (j = l; j < r + 1; j ++) {
-                if (i >= r + 1) { break; }
               let temp = a[l];
               a[l] = a[j];
               a[j] = temp;
@@ -71,10 +70,15 @@
               let temp2 = a[l];
               a[l] = a[j];
               a[j] = temp2;
+              if (i >= r + 1) { break; }
             }
           }
           alert(route.join(","));
         }
+
+// function permuteee() {
+
+// }
 
 function myFunction(index) {
             if (document.getElementById(index).checked) {
